@@ -10,14 +10,17 @@ function checkSID() {
 	}
   }
 
-function checkCandiNo() {
-  let candi = (document.getElementById("candi").value).trim();
-  if (isNaN(candi) || candi < 1) {
-    return false;
-  } else {
-    return true;
+  function checkCandiNo() {
+	let candi = (document.getElementById("candi").value).trim();
+  
+	let candiPattern = /^(10|[1-9])$/;
+  
+	if (candiPattern.test(candi)) {
+	  return true;
+	} else {
+	  return false;
+	}
   }
-}
 
 function validateForm(){
 	if(!checkSID()){
